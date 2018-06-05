@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import { flatMap, fill, omit } from 'lodash';
 import * as mimir from 'mimir';
 
@@ -64,6 +66,32 @@ export function trainNeuralNetworkClassifier(trainData: ITrainData) {
     errorThresh: 0.005,
     log: true,
     logPeriod: 10
+  });
+
+  const serializedNetwork = textClassifier.toJSON();
+
+  fs.writeFile(path.resolve('trainedModels/trainedModel.json'), JSON.stringify(serializedNetwork), (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Trained model saved to trainedModel.json');
+    }
+  });
+
+  fs.writeFile(path.resolve('trainedModels/dictionary.json'), JSON.stringify(TextClassifier.dictionary), (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Dictionary saved to dictionary.json');
+    }
+  });
+
+  fs.writeFile(path.resolve('trainedModels/categories.json'), JSON.stringify(TextClassifier.categories), (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Dictionary saved to categories.json');
+    }
   });
 
   console.log('Neural network trained', trainResult);

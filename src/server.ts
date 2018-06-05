@@ -8,6 +8,7 @@ import * as bodyParser from "koa-bodyparser";
 
 import router from "./routes";
 import * as HttpStatuses from "http-status-codes";
+import TextClassifier from "./entities/TextClassifier";
 
 const app = new Koa();
 
@@ -40,4 +41,7 @@ app.use(router.routes());
 
 // Launch
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server running on ${port}`));
+app.listen(port, () => {
+    console.log(`Server running on ${port}`);
+    TextClassifier.initialize();
+});
