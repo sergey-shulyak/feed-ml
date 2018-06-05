@@ -1,0 +1,1 @@
+{"version":3,"file":"TextClassifier.js","sourceRoot":"","sources":["../../src/entities/TextClassifier.ts"],"names":[],"mappings":";;AAAA,kCAAkC;AAQlC;IAIW,MAAM,KAAK,QAAQ;QACtB,OAAO,IAAI,CAAC,UAAU,CAAC;IAC3B,CAAC;IAEM,MAAM,CAAC,KAAK;QACf,IAAI,CAAC,UAAU,GAAG,IAAI,KAAK,CAAC,aAAa,EAAE,CAAC;IAChD,CAAC;;AAEc,yBAAU,GAAG,IAAI,KAAK,CAAC,aAAa,EAAE,CAAC;AAZ1D,iCAaC"}

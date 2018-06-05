@@ -53,6 +53,7 @@ function createTrainData(categories: ICategory[]) {
 }
 
 export function trainNeuralNetworkClassifier(trainData: ITrainData) {
+  TextClassifier.reset();
   const textClassifier = TextClassifier.instance;
 
   TextClassifier.categories = trainData.categories.map(cat => omit(cat, "samples"));

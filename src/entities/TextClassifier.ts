@@ -14,5 +14,9 @@ export default class TextClassifier {
         return this.classifier;
     }
 
+    public static reset() {
+        this.classifier = new brain.NeuralNetwork();
+    }
+
     private static classifier = new brain.NeuralNetwork();
 }
